@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="bewallwpf.uc_news1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="22*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="ct_date" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="日期时间" TextAlignment="Right" Margin="0,0,10,0.4" FontSize="13.333"/>
+        <TextBlock x:Name="ct_context" Grid.Column="1" TextWrapping="Wrap" Text="新闻内容" Margin="5,32.2,0,0" Grid.RowSpan="2"/>
+        <TextBlock x:Name="ct_title" Grid.Column="1" TextWrapping="Wrap" Text="新闻标题" FontSize="16" Margin="5,4,0,0" TextTrimming="CharacterEllipsis" Height="23.2" VerticalAlignment="Top"/>
+        <Image x:Name="ct_img" Grid.RowSpan="3" Margin="0,10,5,10"/>
+
+    </Grid>
+</UserControl>
