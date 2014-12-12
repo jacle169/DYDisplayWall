@@ -28,12 +28,19 @@ namespace WebApplication1
             app.mianWidth = 1920;
             app.groupHeigth = 1080;
             app.groupWidth = 500;
+
             var gps = new tilegroup();
             gps.tiles =CreateTile1();
             app.tileGroups.Add(gps);
+
             var gps1 = new tilegroup();
             gps1.tiles = CreateTile2();
             app.tileGroups.Add(gps1);
+
+            var gps2 = new tilegroup();
+            gps2.tiles = CreateTile3();
+            app.tileGroups.Add(gps2);
+
             Context.Response.ContentType = "application/json";
             Context.Response.Write(JsonConvert.SerializeObject(app));
             Context.Response.End();
@@ -46,7 +53,7 @@ namespace WebApplication1
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF77B900", margin = 5, tileName = "gt2", refreshSeconds = 3, animation =2, skin = em_skin.datetime });
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF2572EB", margin = 5, tileName = "gt3", refreshSeconds = 15, animation = 13, skin = em_skin.ad, refreshUrl = "http://localhost:37265/WebService1.asmx/GetAd" });
             tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFAD103C", margin = 5, tileName = "gt4", refreshSeconds = 7, animation = 4, skin = em_skin.datetime });
-            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF632F00", margin = 5, tileName = "gt5", refreshSeconds = 25, animation = 5, skin = em_skin.bar, refreshUrl = "http://localhost:37265/WebService1.asmx/GetBar" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF4617B4", margin = 5, tileName = "gt5", refreshSeconds = 25, animation = 5, skin = em_skin.bar, refreshUrl = "http://localhost:37265/WebService1.asmx/GetBar" });
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFB01E00", margin = 5, tileName = "gt6", refreshSeconds = 30, animation = 6, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
             tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFC1004F", margin = 5, tileName = "gt7", refreshSeconds = 35, animation = 7, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF7200AC", margin = 5, tileName = "gt8", refreshSeconds = 40, animation = 8, skin = em_skin.weather, refreshUrl = "http://localhost:37265/WebService1.asmx/GetWeather" });
@@ -60,16 +67,34 @@ namespace WebApplication1
             var tiles = new List<tileInfo>();
             tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF008287", margin = 5, tileName = "gt11", refreshSeconds = 5, animation = 11, skin = em_skin.line, refreshUrl = "http://localhost:37265/WebService1.asmx/GetLine" });
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF199900", margin = 5, tileName = "gt12", refreshSeconds = 3, animation = 12, skin = em_skin.datetime });
-            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00C13F", margin = 5, tileName = "gt13", refreshSeconds = 15, animation = 13, skin = em_skin.ad, refreshUrl = "http://localhost:37265/WebService1.asmx/GetAd" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00C13F", margin = 5, tileName = "gt13", refreshSeconds = 13, animation = 13, skin = em_skin.ad, refreshUrl = "http://localhost:37265/WebService1.asmx/GetAd" });
             tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFFF981D", margin = 5, tileName = "gt14", refreshSeconds = 7, animation = 14, skin = em_skin.datetime });
-            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFFF2E12", margin = 5, tileName = "gt15", refreshSeconds = 25, animation = 15, skin = em_skin.bar, refreshUrl = "http://localhost:37265/WebService1.asmx/GetBar" });
-            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFFF1D77", margin = 5, tileName = "gt16", refreshSeconds = 30, animation = 16, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
-            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFAA40FF", margin = 5, tileName = "gt17", refreshSeconds = 35, animation = 7, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
-            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF1FAEFF", margin = 5, tileName = "gt18", refreshSeconds = 40, animation = 8, skin = em_skin.weather, refreshUrl = "http://localhost:37265/WebService1.asmx/GetWeather" });
-            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF56C5FF", margin = 5, tileName = "gt19", refreshSeconds = 50, animation = 9, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00A3A3", margin = 5, tileName = "gt15", refreshSeconds = 13, animation = 15, skin = em_skin.bar, refreshUrl = "http://localhost:37265/WebService1.asmx/GetBar" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFFF1D77", margin = 5, tileName = "gt16", refreshSeconds = 33, animation = 16, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFAA40FF", margin = 5, tileName = "gt17", refreshSeconds = 36, animation = 7, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF1FAEFF", margin = 5, tileName = "gt18", refreshSeconds = 43, animation = 8, skin = em_skin.weather, refreshUrl = "http://localhost:37265/WebService1.asmx/GetWeather" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF56C5FF", margin = 5, tileName = "gt19", refreshSeconds = 53, animation = 9, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
             tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00D8CC", margin = 5, tileName = "gt20", refreshSeconds = 55, animation = 10, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
             return tiles;
         }
+
+        List<tileInfo> CreateTile3()
+        {
+            var tiles = new List<tileInfo>();
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF008287", margin = 5, tileName = "gt21", refreshSeconds = 8, animation = 11, skin = em_skin.line, refreshUrl = "http://localhost:37265/WebService1.asmx/GetLine" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF199900", margin = 5, tileName = "gt22", refreshSeconds = 3, animation = 12, skin = em_skin.datetime });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00C13F", margin = 5, tileName = "gt23", refreshSeconds = 18, animation = 13, skin = em_skin.ad, refreshUrl = "http://localhost:37265/WebService1.asmx/GetAd" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFFF981D", margin = 5, tileName = "gt24", refreshSeconds = 23, animation = 14, skin = em_skin.datetime });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFFE7C22", margin = 5, tileName = "gt25", refreshSeconds = 28, animation = 15, skin = em_skin.bar, refreshUrl = "http://localhost:37265/WebService1.asmx/GetBar" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFFF1D77", margin = 5, tileName = "gt26", refreshSeconds = 38, animation = 16, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FFAA40FF", margin = 5, tileName = "gt27", refreshSeconds = 48, animation = 7, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF1FAEFF", margin = 5, tileName = "gt28", refreshSeconds = 44, animation = 8, skin = em_skin.weather, refreshUrl = "http://localhost:37265/WebService1.asmx/GetWeather" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FF56C5FF", margin = 5, tileName = "gt29", refreshSeconds = 58, animation = 9, skin = em_skin.news, refreshUrl = "http://localhost:37265/WebService1.asmx/GetNews" });
+            tiles.Add(new tileInfo() { height = 150, width = 150, backColor = "#FF00D8CC", margin = 5, tileName = "gt30", refreshSeconds = 68, animation = 10, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
+            tiles.Add(new tileInfo() { height = 150, width = 310, backColor = "#FFC1004F", margin = 5, tileName = "gt30", refreshSeconds = 68, animation = 10, skin = em_skin.pie, refreshUrl = "http://localhost:37265/WebService1.asmx/GetPies" });
+            return tiles;
+        }
+
     }
 
     public class appInfo

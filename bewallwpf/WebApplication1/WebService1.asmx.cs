@@ -49,13 +49,25 @@ namespace WebApplication1
             Context.Response.End();
         }
 
+        static int ad = 0;
         [WebMethod]
         [ScriptMethod(UseHttpGet = true)]
         public void GetAd()
         {
             Context.Response.ContentType = "application/json";
-            Context.Response.Write(JsonConvert.SerializeObject(
+            if (ad == 0)
+            {
+                ad = 1;
+                Context.Response.Write(JsonConvert.SerializeObject(
                 new imgobj() { url = "http://d.lanrentuku.com/down/png/0904/18Boxes/Zip.png" }));
+            }
+            else
+            {
+                ad = 0;
+                Context.Response.Write(JsonConvert.SerializeObject(
+                new imgobj() { url = "http://img.sj33.cn/uploads/allimg/201012/2010122009080699.png" }));
+
+            }
             Context.Response.End();
         }
 
